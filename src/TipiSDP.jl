@@ -1,4 +1,4 @@
-module MySDPSolver
+module TipiSDP
 
 using LinearAlgebra, SparseArrays, MKLSparse, SuiteSparse
 using GenericLinearAlgebra
