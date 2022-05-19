@@ -26,7 +26,7 @@ Optimizer(;kwargs...) = Optimizer{Float64}(;kwargs...)
 
 varmap(opt::Optimizer, vi::MOI.VariableIndex) = opt.varmap[vi.value]
 
-MOI.get(::Optimizer, ::MOI.SolverName) = "MySDPSolver"
+MOI.get(::Optimizer, ::MOI.SolverName) = "TipiSDP"
 
 MOI.supports(::Optimizer, ::MOI.Silent) = true
 
@@ -162,9 +162,9 @@ function MOI.copy_to(dest::Optimizer{T}, src::MOI.ModelLike) where {T}
 
     vis_src = MOI.get(src, MOI.ListOfVariableIndices())
     if length(vis_src) != length(index_map.var_map)
-        error("Free variables are not supported by SDPA",
-              ". Use `MOI.instantiate(SDPA.Optimizer, with_bridge_type = Float64)` ",
-              "to bridge free variables into `x - y` where `x` and `y` are nonnegative.")
+        error("Free variables are not supported",
+              "",
+              "")
     end
     cis_src = MOI.get(src, MOI.ListOfConstraintIndices{MOI.ScalarAffineFunction{T},MOI.EqualTo{T}}())
     println("length(cis_src): $(length(cis_src))")
