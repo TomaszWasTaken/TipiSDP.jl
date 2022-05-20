@@ -1,1 +1,24 @@
+* Interface: -add support for raw parameters (tol,...)
+             -custom starting point
+             -custom choice of stopping criterion (standard, DIMACS, user-defined,...)
+             -add the dummy constraint when A empty
+
+* Problem: -allow the user to save the history of the iterations.
+
+* Workspace: -automate the choice between the additional memory for B (n*m faster but m*m necessary for bigger problems ('eqG32.dat-s')).
+              Also investigate numerical errors between the two versions (weird behaviour for 'mcp100.dat-s').
+             -Add support for sparse S. Problem: no general Sparse Cholesky is available at the moment. Possible solution:
+              compute the sparsity pattern and permutation using SuiteSparse (working only for Float64) and compute the entries
+              manually.
+              
+* IPM: -stopping criterion not sufficient for ill-conditioned problems when tol too small ('control3.dat-s',...) SDPT3 detects it.
+        Implement their criterion.
+       -switch between cholesky and LU if B numerically not > 0.
+       -better exception handling.
+       
+* Misc: -since 1.7, SparseMatrixCSC constructor explicitly checks for dimensions and allocates. Possible to avoid it?
+        -investigate faster alternatives for Extended precision computations (https://github.com/RalphAS/DoubleBLAS.jl,...)
+        -add the benchmark results.
+              
+
 
