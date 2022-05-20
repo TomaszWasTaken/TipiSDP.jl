@@ -1,4 +1,4 @@
-using MySDPSolver, Test, LinearAlgebra, SparseArrays
+using TipiSDP, Test, LinearAlgebra, SparseArrays
 
 @testset "Workspace" begin
     @test true
