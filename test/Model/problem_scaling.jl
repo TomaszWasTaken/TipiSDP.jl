@@ -1,4 +1,4 @@
-using MySDPSolver, Test, LinearAlgebra, SparseArrays
+using TipiSDP, Test, LinearAlgebra, SparseArrays
 
 @testset "ProblemScaling" begin
     @test true
