@@ -1,8 +1,8 @@
-module TestMySDPSolver
+module TestTipiSDP
 
 using Test
 using MathOptInterface
-import MySDPSolver
+import TipiSDP
 
 const MOI = MathOptInterface
 
@@ -18,14 +18,14 @@ function runtests()
 end
 
 function test_solver_name()
-    @test MOI.get(MySDPSolver.Optimizer(), MOI.SolverName()) == "MySDPSolver"
+    @test MOI.get(TipiSDP.Optimizer(), MOI.SolverName()) == "TipiSDP"
 end
 
 function test_options()
     param = MOI.RawOptimizerAttribute("bad_option")
     err = MOI.UnsupportedAttribute(param)
     @test_throws err MOI.set(
-        MySDPSolver.Optimizer(),
+        TipiSDP.Optimizer(),
         MOI.RawOptimizerAttribute("bad_option"),
         0,
     )
@@ -34,7 +34,7 @@ end
 function test_runtests()
     model = MOI.Utilities.CachingOptimizer(
         MOI.Utilities.UniversalFallback(MOI.Utilities.Model{Float64}()),
-        MOI.instantiate(MySDPSolver.Optimizer, with_bridge_type = Float64),
+        MOI.instantiate(TipiSDP.Optimizer, with_bridge_type = Float64),
     )
     # `Variable.ZerosBridge` makes dual needed by some tests fail.
     MOI.Bridges.remove_bridge(
@@ -132,4 +132,4 @@ end
 
 end  # module
 
-TestMySDPSolver.runtests()
+TestTipiSDP.runtests()
