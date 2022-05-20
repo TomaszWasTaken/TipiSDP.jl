@@ -1,4 +1,4 @@
-using MySDPSolver, Test
+using TipiSDP, Test
 
 @testset verbose = true "All" begin
     @testset verbose = true "Model" begin
