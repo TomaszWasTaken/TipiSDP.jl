@@ -21,6 +21,7 @@
         -add the benchmark results.
         -add documentation
         -encapsulate distinct parts of the code in modules (-> avoid ordering the include's)
+        -add more extensive tests
               
 
 
