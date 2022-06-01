@@ -15,6 +15,7 @@
         Implement their criterion.
        -switch between cholesky and LU if B numerically not > 0.
        -better exception handling.
+       -check infeas at each iteration
        
 * Misc: -since 1.7, SparseMatrixCSC constructor explicitly checks for dimensions and allocates. Possible to avoid it?
         -investigate faster alternatives for Extended precision computations (https://github.com/RalphAS/DoubleBLAS.jl,...)
