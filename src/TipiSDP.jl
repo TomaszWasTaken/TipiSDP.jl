@@ -10,7 +10,7 @@ import LinearAlgebra: BlasInt
 import Base.empty!
 
 function version()
-    v"0.0.0"
+    v"0.1.0"
 end
 
 include("./LinearAlgebra/utils.jl")
