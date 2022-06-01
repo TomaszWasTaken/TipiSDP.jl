@@ -24,5 +24,4 @@
         -encapsulate distinct parts of the code in modules (-> avoid ordering the include's)
         -add more extensive tests
         -add README
-
-
+       !-'] add MKL' required?
