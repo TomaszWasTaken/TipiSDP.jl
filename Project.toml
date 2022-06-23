@@ -1,6 +1,6 @@
 name = "TipiSDP"
 uuid = "6a1efff9-a015-4b29-891c-e02fc6e36f20"
-authors = ["tomasz "]
+authors = ["TomaszWasTaken"]
 version = "0.1.0"
 
 [deps]
@@ -12,3 +12,9 @@ Printf = "de0858da-6303-5e67-8744-51eddeeeb8d7"
 SparseArrays = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
 SuiteSparse = "4607b0f0-06f3-5cda-b6b1-a6196a1729e9"
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[compat]
+GenericLinearAlgebra = "0.3"
+MathOptInterface = "~0.10.7, 1"
+MKLSparse = "1.1.0"
+julia = "^1"
